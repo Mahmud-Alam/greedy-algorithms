@@ -2,9 +2,9 @@
 using namespace std;
 
 int main(){
-    int amount,n,coin[100],change[100];
+    int amount,n,coin[100],change[100] = {0};
     cout<<"How many types of coin you have? : "; cin>>n;
-    cout<<endl<<"Input value of coins";
+    cout<<endl<<"Input value of coins"<<endl;
     for(int i=0;i<n;i++){
         cin>>coin[i];
     }
@@ -19,10 +19,15 @@ int main(){
                 flag = 1;
             }
         }
-        if(flag = 0) break;
+        if(flag == 0) break;
     }
 
-    cout<<endl<<"What amount you want to change? : "; cin>>amount;
+    cout<<endl<<"After sort: ";
+    for(int i=0;i<n;i++){
+        cout<<coin[i]<<"   ";
+    }
+
+    cout<<endl<<endl<<"What amount you want to change? : "; cin>>amount;
     int i = 0;
     while(amount>0){
         int value = amount/coin[i];
@@ -30,7 +35,12 @@ int main(){
         amount = amount - coin[i]*value;
         i++;
     }
+    cout<<endl;
     for(int i=0;i<n;i++){
-        cout<<change[i]<<"   ";
+        if(change[i]!=0){
+            cout<<coin[i]<<" Taka : ";
+            cout<<change[i]<<" times"<<endl;
+        }
     }
+
 }
