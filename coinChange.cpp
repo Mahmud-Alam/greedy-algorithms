@@ -36,10 +36,10 @@ int main(){
         i++;
     }
     cout<<endl;
-    for(int i=0;i<n;i++){
+    for(int i=n-1;i>=0;i--){                                            //print reverse order
         if(change[i]!=0){
-            cout<<coin[i]<<" Taka : ";
-            cout<<change[i]<<" times"<<endl;
+            cout<<setfill(' ')<<setw(6)<<coin[i]<<" Taka : ";           //set a gap for arrange numbers
+            cout<<setfill(' ')<<setw(3)<<change[i]<<" times"<<endl;
         }
     }
 
