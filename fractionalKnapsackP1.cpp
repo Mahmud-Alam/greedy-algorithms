@@ -7,7 +7,8 @@ struct Node{
     double ratio;
 };
 
-int fractionalKnapsack(int w, int n, struct Node item[]){
+double fractionalKnapsack(int w, int n, struct Node item[]){
+    double currentWeight = 0.0, finalValue = 0.0;
     for(int i=0;i<n-1;i++){
         for(int j=0;j<n-i-1;j++){
             if(item[j].ratio<item[j+1].ratio){
@@ -17,6 +18,18 @@ int fractionalKnapsack(int w, int n, struct Node item[]){
             }
         }
     }
+    for(int i=0;i<n;i++){
+        if(currentWeight+item[i].weight<w){
+            finalValue+=item[i].value;
+            currentWeight+=item[i].weight;
+        }
+        else{
+            int remain = w - currentWeight;
+            finalValue+=item[i].value*((double)remain/item[i].weight);
+            break;
+        }
+    }
+    return finalValue;
 }
 
 int main(){
