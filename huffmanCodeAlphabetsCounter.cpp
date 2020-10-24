@@ -11,7 +11,7 @@ int main(){
     Node arr[100];
     string str;
     cout<<"Input a string: ";getline(cin,str);
-    cout<<endl;
+
     int i=0;
     while(str[i]!='\0'){
             int flag = 0;
@@ -29,8 +29,8 @@ int main(){
     }
     for(int j=0;j<i;j++){
         if(arr[j].number!=0){
-            cout<<endl<<arr[j].charr<<"   "<<arr[j].number;
+            cout<<endl<<arr[j].charr<<"  ->  "<<arr[j].number;
         }
     }
-    cout<<endl<<i;
+    cout<<endl<<endl<<"Total characters: "<<i<<endl;
 }
