@@ -35,17 +35,17 @@ int main(){
     cout<<endl<<endl<<"Total characters: "<<i<<endl;
 
     for(int j=0;j<i-1;j++){
-        if(arr[j].number!=0){
+        //if(arr[j].number!=0){
             for(int k=0;k<i-j-1;k++){
-                if(arr[j].number!=0){
+                //if(arr[j].number!=0){
                     if(arr[j].number>arr[j+1].number){
                         Node temp = arr[j];
                         arr[j] = arr[j+1];
                         arr[j+1] = temp;
                     }
-                }
+                //}
             }
-        }
+        //}
     }
         for(int j=0;j<i;j++){
         if(arr[j].number!=0){
