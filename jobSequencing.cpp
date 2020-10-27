@@ -11,12 +11,19 @@ class Node{
 void jobSequencing(int n, Node selection[], Node job[]){
     for(int i=0;i<n-1;i++){
         for(int j=0;j<n-i-1;j++){
-            if(job[j].profit<job[j].profit){
+            if(job[j].profit<job[j+1].profit){
                 Node temp = job[j];
                 job[j] = job[j+1];
                 job[j+1] = temp;
             }
         }
+    }
+
+    for(int i=0;i<n;i++){
+        cout<<job[i].id<<"   ";
+        cout<<job[i].deadLine<<"   ";
+        cout<<job[i].profit<<"   ";
+        cout<<endl;
     }
 }
 
