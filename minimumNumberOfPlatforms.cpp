@@ -42,22 +42,18 @@ int main(){
     }
 
     for(int i=0;i<k;i++){
-            int flag = 0;
         for(int j=0;j<n;j++){
             if(time_frame[i]==time[j].arr){
                 count++;
-                flag = 1;
                 if(count>max)
                     max = count;
                 break;
             }
         }
-        if(flag == 0){
-            for(int h=0;h<n;h++){
-                if(time_frame[i]==time[h].dep){
-                    count--;
-                    break;
-                }
+        for(int h=0;h<n;h++){
+            if(time_frame[i]==time[h].dep){
+                count--;
+                break;
             }
         }
     }
