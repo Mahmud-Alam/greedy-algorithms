@@ -35,11 +35,13 @@ void jobSequencing(int n, Node selection[], Node job[]){
             }
         }
     }
-    int z=0;
-    while(selection[z].flag!=false){
-        cout<<selection[z].id<<"\t";
-        cout<<selection[z].profit<<endl;
-        z++;
+
+    cout<<endl<<" Selected Job ID's\tProfit"<<endl;
+    for(int i=0;i<n;i++){
+        if(selection[i].flag==true){
+            cout<<"\t"<<selection[i].id;
+            cout<<"\t\t  "<<selection[i].profit<<endl;
+        }
     }
 }
 
