@@ -13,9 +13,9 @@ int main(){
     Node jobList[100];
     cout<<"Input a number of n: ";cin>>n;
     for(int i=0;i<n;i++){
-        cout<<endl<<"Input "<<i+1<<"'s Job ID no   : ";cin>>jobList[i].id;
-        cout<<"Input "<<i+1<<"'s Job Loss  : ";cin>>jobList[i].loss;
-        cout<<"Input "<<i+1<<"'s Job Time: ";cin>>jobList[i].time;
+        cout<<endl<<"Input "<<i+1<<"'s Job ID no: ";cin>>jobList[i].id;
+        cout<<"Input "<<i+1<<"'s Job Loss : ";cin>>jobList[i].loss;
+        cout<<"Input "<<i+1<<"'s Job Time : ";cin>>jobList[i].time;
         jobList[i].ratio = (double)jobList[i].loss/jobList[i].time;
     }
     for(int i=0;i<n-1;i++){
