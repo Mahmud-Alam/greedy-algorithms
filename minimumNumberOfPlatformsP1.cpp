@@ -47,4 +47,5 @@ int main(){
             d++;
         }
     }
+    cout<<endl<<"Minimum number of platforms: "<<max<<endl;
 }
