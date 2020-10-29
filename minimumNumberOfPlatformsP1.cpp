@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    int n,count=0,max=0,m=0;arr[100],dep[100],timeList[200];
+    int n,count=0,max=0,m=0,arr[100],dep[100],timeList[200];
     cout<<"Input a number of n: ";cin>>n;
     for(int i=0;i<n;i++){
         cout<<endl<<i+1<<" train's Arrival time  : ";cin>>arr[i];
@@ -33,6 +33,18 @@ int main(){
                 timeList[j] = timeList[j+1];
                 timeList[j+1] = temp;
             }
+        }
+    }
+    int a=0,d=0;
+    for(int i=0;i<m;i++){
+        if(timeList[i]==arr[a]){
+            count++;
+            if(max<count) max = count;
+            a++;
+        }
+        if(timeList[i]==dep[d]){
+            count--;
+            d++;
         }
     }
 }
