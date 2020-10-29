@@ -1,3 +1,13 @@
+
+
+//Error Solved:______________________________________________________________________________________
+//same arrival and departure value can input now, and given answer from code is right.
+//Just check the departure (If condition) before than arrival (If condition)
+//So same value can not increase arrival value, because first it has to decrease the departure value.
+//This is how the, the extra arrival not added in MAX, and CORRECT Answer is given. ^_^ ^_^ ^_^
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -37,11 +47,11 @@ int main(){
     }
     int a=0,d=0;
     for(int i=0;i<m;i++){
-        if(timeList[i]==dep[d]){
+        if(timeList[i]==dep[d]){                            //first departure if condition check;
             count--;
             d++;
         }
-        else if(timeList[i]==arr[a]){
+        else if(timeList[i]==arr[a]){                      //then, arrival if condition check;
             count++;
             if(max<count) max = count;
             a++;
