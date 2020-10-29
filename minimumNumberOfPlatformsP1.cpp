@@ -37,14 +37,14 @@ int main(){
     }
     int a=0,d=0;
     for(int i=0;i<m;i++){
-        if(timeList[i]==arr[a]){
-            count++;
-            if(max<count) max = count;
-            a++;
-        }
         if(timeList[i]==dep[d]){
             count--;
             d++;
+        }
+        else if(timeList[i]==arr[a]){
+            count++;
+            if(max<count) max = count;
+            a++;
         }
     }
     cout<<endl<<"Minimum number of platforms: "<<max<<endl;
